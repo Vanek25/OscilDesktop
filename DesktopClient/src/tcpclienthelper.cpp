@@ -1,4 +1,4 @@
-#include "tcpclienthelper.h"
+#include "include/tcpclienthelper.h"
 
 TcpClientHelper::TcpClientHelper(QObject *parent)
     : QObject{parent}, tch_ipAddr("192.168.1.102"), tch_port(8080)

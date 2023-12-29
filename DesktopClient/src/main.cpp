@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "tcpclienthelper.h"
+#include <QOpenGLContext>
+#include <QSurfaceFormat>
+#include "include/tcpclienthelper.h"
 
 int main(int argc, char *argv[])
 {

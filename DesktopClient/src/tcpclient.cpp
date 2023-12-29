@@ -1,4 +1,4 @@
-#include "tcpclient.h"
+#include "include/tcpclient.h"
 
 TcpClient::TcpClient(QString ipAddress, int port) : QObject(), m_nNextBlockSize(0)
 {

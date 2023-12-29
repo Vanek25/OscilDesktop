@@ -3,9 +3,11 @@ import QtQuick.Controls 2.2
 
 Rectangle
 {
+    id: customOpenGLItem
     border.width: 2
 
-    Text {
+    Text
+    {
         id: text1
         text: qsTr("Граффик")
         anchors.fill: parent

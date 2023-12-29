@@ -4,7 +4,9 @@ import QtQuick.Controls 2.3
 Rectangle
 {
     id: rectangle
-    Text {
+
+    Text
+    {
         id: text1
         text: "Верхняя панель с кнопками"
         verticalAlignment: Text.AlignVCenter
@@ -12,5 +14,4 @@ Rectangle
         anchors.fill: parent
         font.pixelSize: 19
     }
-
 }

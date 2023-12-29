@@ -9,6 +9,7 @@ Window
     height: 566
     title: qsTr("Send / Receive test")
 
+
     TcpClientHelepr
     {
         id: tcpClientHelper

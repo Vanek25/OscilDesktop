@@ -6,7 +6,8 @@ Rectangle
     id: rectangle
     border.width: 2
 
-    Text {
+    Text
+    {
         id: text1
         text: qsTr("Левая колонка")
         anchors.fill: parent

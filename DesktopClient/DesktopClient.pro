@@ -13,11 +13,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp \
-    tcpclient.cpp \
-    tcpclienthelper.cpp
+    src/main.cpp \
+    src/tcpclient.cpp \
+    src/tcpclienthelper.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += ui/qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -25,11 +25,21 @@ QML_IMPORT_PATH =
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH =
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+QML_SHOW_FRAMERATE = 1
+
+## Default rules for deployment.
+#qnx: target.path = /tmp/$${TARGET}/bin
+#else: unix:!android: target.path = /opt/$${TARGET}/bin
+#!isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    tcpclient.h \
-    tcpclienthelper.h
+    include/tcpclient.h \
+    include/tcpclienthelper.h
+
+ARCH = $$system(uname -m)
+
+MOC_DIR     = ./build.$$ARCH/moc
+OBJECTS_DIR = ./build.$$ARCH/obj
+RCC_DIR     = ./build.$$ARCH/res
+UI_DIR      = ./build.$$ARCH/ui
+DESTDIR     = ./build.$$ARCH/out

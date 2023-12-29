@@ -9,15 +9,15 @@ class TcpClientHelper : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool currentStatus READ   getStatus
-                   NOTIFY statusChanged
+                                  NOTIFY statusChanged
                )
     Q_PROPERTY(QString _ipAddr WRITE  setIpAddr
-                   READ   getIpAddr
-                       NOTIFY ipAddrChanged
+                               READ   getIpAddr
+                               NOTIFY ipAddrChanged
                )
     Q_PROPERTY(int _port  WRITE  setPort
-                   READ   getPort
-                       NOTIFY portChanged
+                          READ   getPort
+                          NOTIFY portChanged
                )
 
     QString tch_ipAddr;
@@ -32,7 +32,6 @@ public:
 
     void setIpAddr(QString ipAddr);
     void setPort(int port);
-
 
 signals:
     void statusChanged(QString newStatus);

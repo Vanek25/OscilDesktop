@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.0
 Rectangle {
     id: rectMain
     border.width: 2
+
     RowLayout
     {
         id: rowLayout
