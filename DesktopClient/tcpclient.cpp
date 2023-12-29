@@ -36,7 +36,7 @@ void TcpClient::connectionTimeout()
     if(tcpSocket->state() == QAbstractSocket::ConnectingState)
     {
         tcpSocket->abort();
-        emit tcpSocket->errorOccurred(QAbstractSocket::SocketTimeoutError);
+        emit tcpSocket->error();
     }
 
     qDebug() << "Connection timeout" << _ipAddress << _port;

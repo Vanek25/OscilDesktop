@@ -38,12 +38,22 @@ void TcpClientHelper::setPort(int port)
 
 void TcpClientHelper::startTimerSim()
 {
+    if(!getStatus())
+    {
+        qDebug() << "NO connection! Timer will not start!";
+        return;
+    }
     timerSim->start(16);
     qDebug() << "TimerSim started";
 }
 
 void TcpClientHelper::stopTimerSim()
 {
+    if(!getStatus())
+    {
+        qDebug() << "NO connection! Timer will not stop!";
+        return;
+    }
     timerSim->stop();
     qDebug() << "TimerSim stoped";
 }
@@ -76,20 +86,20 @@ void TcpClientHelper::gotError(QAbstractSocket::SocketError errorSocket)
 
     switch(errorSocket)
     {
-        case 0:
-            strError = "Connection was refused";
-            break;
-        case 1:
-            strError = "Remote host closed the connection";
-            break;
-        case 2:
-            strError = "Host address was not found";
-            break;
-        case 5:
-            strError = "Connection timed out";
-            break;
-        default:
-            strError = "Unknown error";
+    case 0:
+        strError = "Connection was refused";
+        break;
+    case 1:
+        strError = "Remote host closed the connection";
+        break;
+    case 2:
+        strError = "Host address was not found";
+        break;
+    case 5:
+        strError = "Connection timed out";
+        break;
+    default:
+        strError = "Unknown error";
     }
 
     emit someError(strError);

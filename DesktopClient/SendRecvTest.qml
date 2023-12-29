@@ -1,26 +1,29 @@
-import QtQuick 6.2
-import QtQuick.Controls 6.2
-import io.qt.TcpClientHelepr
+import QtQuick 2.11
+import QtQuick.Window 2.11
+import QtQuick.Controls 2.2
+import io.qt.TcpClientHelepr 1.0
 
-Window {
-    width: 1100
-    height: 600
-
-    visible: true
-    title: "SCPI_client_QtQuick"
+Window
+{
+    width: 1150
+    height: 566
+    title: qsTr("Send / Receive test")
 
     TcpClientHelepr
     {
         id: tcpClientHelper
-        onStatusChanged: {
+        onStatusChanged:
+        {
             field_incomincMes.append(addMsg(newStatus));
         }
-        onSomeMessage: {
+        onSomeMessage:
+        {
             field_incomincMes.text = addMsg(message);
         }
-        onSomeError: {
+        onSomeError:
+        {
             field_incomincMes.append(addMsg("Error! " + err));
-            if (currentStatus != true)
+            if (currentStatus !== true)
             {
                 tcpClientHelper.disconnectClicked();
             }
@@ -28,55 +31,62 @@ Window {
         }
     }
 
-    TextArea {
+    TextArea
+    {
         id: field_commandSend
         x: 8
-        y: 77
-        width: 1000
+        y: 54
+        width: 848
         height: 50
         placeholderText: qsTr("Command to send")
         color: "#000000"
+        verticalAlignment: Text.AlignVCenter
     }
 
-    TextArea {
+    TextArea
+    {
         id: field_incomincMes
         x: 8
-        y: 137
-        width: 700
+        y: 110
+        width: 992
         height: 443
         placeholderText: qsTr("Incoming messages")
         color: "#000000"
+        verticalAlignment: Text.AlignTop
     }
 
-    TextField {
+    TextField
+    {
         id: field_ipAddr
         x: 8
         y: 8
         width: 238
         height: 40
         placeholderText: qsTr("IP addr")
-        color: "#F0F0F0"
+        color: "#000000"
         text: "192.168.1.102"
     }
 
-    TextField {
+    TextField
+    {
         id: field_port
         x: 252
         y: 8
         width: 111
         height: 40
         placeholderText: qsTr("Port")
-        color: "#F0F0F0"
+        color: "#000000"
         text: "8080"
         validator: IntValidator {bottom: 1; top: 9999}
     }
 
-    Button {
+    Button
+    {
         id: button
-        x: 86
-        y: 526
-        width: 199
-        height: 53
+        x: 862
+        y: 54
+        width: 138
+        height: 50
         text: qsTr("Send command")
         onClicked:
         {
@@ -85,16 +95,17 @@ Window {
         }
     }
 
-    Button {
+    Button
+    {
         id: button2
         x: 370
         y: 8
-        width: 100
+        width: 103
         height: 40
         text: qsTr("Connect")
         onClicked:
         {
-            if(button2.text == "Connect")
+            if(button2.text === "Connect")
             {
                 tcpClientHelper._ipAddr = field_ipAddr.text;
                 tcpClientHelper._port = parseInt(field_port.text);
@@ -110,31 +121,34 @@ Window {
         }
     }
 
-    Button{
+    Button
+    {
         id: simulation
-        x: 500
+        x: 538
         y: 8
-        width: 100
+        width: 184
         height: 40
-        text: qsTr("CH1:SCALe?")
+        text: qsTr("CH1:SCALe? 60 recv/s")
         onClicked: tcpClientHelper.startTimerSim();
     }
 
-    Button{
+    Button
+    {
         id: simof
-        x: 630
+        x: 747
         y: 8
-        width: 70
+        width: 143
         height: 40
-        text: qsTr("Sim off")
+        text: qsTr("Stop 60 recv/s")
         onClicked: tcpClientHelper.stopTimerSim();
     }
 
-    Button{
+    Button
+    {
         id: stop
-        x: 720
-        y: 8
-        width: 60
+        x: 1022
+        y: 59
+        width: 102
         height: 40
         text: qsTr("Stop")
         onClicked:
@@ -143,11 +157,12 @@ Window {
         }
     }
 
-    Button{
+    Button
+    {
         id: auto
-        x: 790
-        y: 8
-        width: 60
+        x: 1022
+        y: 105
+        width: 102
         height: 40
         text: qsTr("Auto")
         onClicked:
@@ -156,11 +171,12 @@ Window {
         }
     }
 
-    Button{
+    Button
+    {
         id: normal
-        x: 870
-        y: 8
-        width: 60
+        x: 1022
+        y: 151
+        width: 102
         height: 40
         text: qsTr("Normal")
         onClicked:
@@ -169,11 +185,12 @@ Window {
         }
     }
 
-    Button{
+    Button
+    {
         id: single
-        x: 950
-        y: 8
-        width: 60
+        x: 1022
+        y: 197
+        width: 102
         height: 40
         text: qsTr("Single")
         onClicked:

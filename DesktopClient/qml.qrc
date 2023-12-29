@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>MainWindow.qml</file>
+        <file>SendRecvTest.qml</file>
+        <file>Graph.qml</file>
+        <file>LeftArea.qml</file>
+        <file>TopArea.qml</file>
+        <file>BottomArea.qml</file>
+    </qresource>
+</RCC>
