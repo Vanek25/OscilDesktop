@@ -8,7 +8,7 @@ Window
     id: window
     visible: true
     width: 1150
-    height: 650
+    height: 750
     title: qsTr("Oscilloscope Client")
 
     SendRecvTest
@@ -23,7 +23,7 @@ Window
         anchors.topMargin: 570
         anchors.right: parent.right
         anchors.rightMargin: 5
-        anchors.left: parent.left
+        anchors.left: leftArea.right
         anchors.leftMargin: 5
         border.width: 2
         anchors.bottom: parent.bottom
@@ -55,7 +55,7 @@ Window
     LeftArea
     {
         id: leftArea
-        anchors.bottom: bottomArea.top
+        anchors.bottom: parent.bottom
         anchors.bottomMargin: 6
         anchors.top: topArea.bottom
         anchors.topMargin: 7

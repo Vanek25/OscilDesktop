@@ -6,5 +6,6 @@
         <file>LeftArea.qml</file>
         <file>TopArea.qml</file>
         <file>BottomArea.qml</file>
+        <file>ChannelInfo.qml</file>
     </qresource>
 </RCC>

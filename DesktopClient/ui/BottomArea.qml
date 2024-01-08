@@ -4,65 +4,38 @@ import QtQuick.Layouts 1.0
 
 Rectangle {
     id: rectMain
+    width: 900
     border.width: 2
 
     RowLayout
     {
         id: rowLayout
-        anchors.rightMargin: 8
-        anchors.bottomMargin: 8
-        anchors.leftMargin: 8
-        anchors.topMargin: 8
         anchors.fill: parent
         spacing: 5
 
-        Button
+        ChannelInfo
         {
-            id: button
-            x: 56
-            y: 5
-            text: qsTr("Button")
+            id: chInfo1
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
 
-        Button
+        ChannelInfo
         {
-            id: button1
-            x: 156
-            y: 5
-            text: qsTr("Button")
+            id: chInfo2
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
 
-        Button
+        ChannelInfo
         {
-            id: button2
-            x: 156
-            y: 5
-            text: qsTr("Button")
+            id: chInfo3
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
 
-        Button
+        ChannelInfo
         {
-            id: button3
-            x: 156
-            y: 5
-            text: qsTr("Button")
+            id: chInfo4
         }
 
-        Button
-        {
-            id: button4
-            x: 156
-            y: 5
-            text: qsTr("Button")
-        }
-
-        Button
-        {
-            id: button5
-            x: 156
-            y: 5
-            text: qsTr("Button")
-        }
     }
 
 }
