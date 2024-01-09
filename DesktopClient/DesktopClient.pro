@@ -15,7 +15,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     src/main.cpp \
     src/tcpclient.cpp \
-    src/tcpclienthelper.cpp
+    src/tcpclienthelper.cpp \
+    src/parserscpi.cpp
 
 RESOURCES += ui/qml.qrc
 
@@ -34,7 +35,8 @@ QML_SHOW_FRAMERATE = 1
 
 HEADERS += \
     include/tcpclient.h \
-    include/tcpclienthelper.h
+    include/tcpclienthelper.h \
+    include/parserscpi.h
 
 ARCH = $$system(uname -m)
 

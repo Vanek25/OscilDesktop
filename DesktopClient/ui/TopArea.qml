@@ -8,7 +8,6 @@ Rectangle
     Text
     {
         id: text1
-        text: "Верхняя панель с кнопками"
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         anchors.fill: parent

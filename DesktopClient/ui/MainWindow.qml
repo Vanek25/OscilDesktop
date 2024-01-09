@@ -48,6 +48,8 @@ Window
             width: 165
             height: 36
             text: "Open Test"
+            anchors.right: parent.right
+            anchors.rightMargin: 20
             onClicked: sendRecvTest.show()
         }
     }

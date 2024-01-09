@@ -9,7 +9,6 @@ Rectangle
     Text
     {
         id: text1
-        text: qsTr("Левая колонка")
         anchors.fill: parent
         fontSizeMode: Text.FixedSize
         verticalAlignment: Text.AlignVCenter

@@ -60,7 +60,8 @@ void TcpClientHelper::stopTimerSim()
 
 void TcpClientHelper::sendMesSim()
 {
-    sendClicked(":CHANnel1:SCALe?");
+    sendClicked(":TEMP1?:TEMP2?:TEMP3?:TEMP4?");
+
 }
 
 void TcpClientHelper::setStatus(bool newStatus)

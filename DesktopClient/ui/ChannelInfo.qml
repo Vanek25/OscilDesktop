@@ -1,6 +1,6 @@
 import QtQuick 2.11
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.3
 
 Rectangle
 {
@@ -11,21 +11,20 @@ Rectangle
 
     RowLayout {
         id: row
+        anchors.rightMargin: 2
+        anchors.leftMargin: 2
+        anchors.bottomMargin: 2
+        anchors.topMargin: 2
         anchors.fill: parent
         spacing: 0
 
-        Button
-        {
+        Button {
             id: button
-            width: 50
-            Layout.preferredHeight: row.height
-            Layout.preferredWidth: row.width * 0.25
-            height: row.height
+            x: 8
+            y: 20
+            width: 60
             text: qsTr("CH N")
-            Layout.margins: 2
-            highlighted: false
-            flat: false
-            display: AbstractButton.TextOnly
+            padding: 6
             Layout.fillHeight: true
             background: Rectangle
             {
@@ -34,21 +33,17 @@ Rectangle
 
             contentItem: Text {
                 text: button.text
-                anchors.verticalCenter: parent.verticalCenter
                 horizontalAlignment: Text.AlignHCenter
-                anchors.horizontalCenter: parent.horizontalCenter
                 verticalAlignment: Text.AlignVCenter
                 color: "#000000"
             }
-
         }
+
 
         GridLayout {
             id: gridLayout
-            anchors.left: button.right
-            anchors.right: parent.right
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
+            scale: 0.01
+            Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.margins: 2
             Layout.topMargin: 0
@@ -58,10 +53,10 @@ Rectangle
             Label
             {
                 text: "Param 1"
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 color: "#000000"
                 verticalAlignment: Qt.AlignVCenter
             }
@@ -126,6 +121,7 @@ Rectangle
 
 
     }
+
 
 
 
